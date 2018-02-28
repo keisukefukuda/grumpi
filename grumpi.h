@@ -31,7 +31,7 @@ int grunpy_str_key_cmp(void *key1, void *key2) {
     return strcmp((char*)key1, (char*)key2);
 }
 
-MPI_STATUS MPI_Comm_create_intranode(MPI_Comm comm, MPI_Comm *newcomm) {
+MPI_STATUS GRUMPI_Comm_create_intranode(MPI_Comm comm, MPI_Comm *newcomm) {
     char my_host[HOST_NAME_MAX_LEN];
     char *recv_buf = NULL;
     int *send_buf = NULL;
@@ -99,7 +99,7 @@ MPI_STATUS MPI_Comm_create_intranode(MPI_Comm comm, MPI_Comm *newcomm) {
     if (send_buf) free(send_buf);
 }
 
-MPI_STATUS MPI_Comm_localrank(MPI_Comm comm, int *rank) {
+MPI_STATUS GRUMPI_Comm_localrank(MPI_Comm comm, int *rank) {
     if (comm == MPI_COMM_WORLD) {
         const char* ompi_local_rank = getenv("OMPI_COMM_WORLD_LOCAL_RANK");
 
