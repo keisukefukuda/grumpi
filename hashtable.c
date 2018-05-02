@@ -5,6 +5,8 @@
  * Date:   August, 1998
  * Released to the public domain.
  *
+ * Modified by Keisuke Fukuda
+ *
  *--------------------------------------------------------------------------
  * $Id: hashtable.c,v 1.5 2012/03/16 18:32:37 pomakis Exp pomakis $
 \*--------------------------------------------------------------------------*/
@@ -13,6 +15,10 @@
 #include <stdlib.h>
 #include <assert.h>
 #include "hashtable.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 static int pointercmp(const void *pointer1, const void *pointer2);
 static unsigned long pointerHashFunction(const void *pointer);
@@ -694,3 +700,7 @@ static long calculateIdealNumOfBuckets(HashTable *hashTable) {
 
     return idealNumOfBuckets;
 }
+
+#ifdef __cplusplus
+}
+#endif

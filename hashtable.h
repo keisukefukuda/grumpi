@@ -12,6 +12,10 @@
 #ifndef _HASHTABLE_H
 #define _HASHTABLE_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /* These structs should not be accessed directly from user code.
  * All access should be via the public functions declared below. */
 
@@ -433,5 +437,9 @@ void HashTableSetDeallocationFunctions(HashTable *hashTable,
 \*--------------------------------------------------------------------------*/
 
 unsigned long HashTableStringHashFunction(const void *key);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* _HASHTABLE_H */
