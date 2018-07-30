@@ -62,7 +62,7 @@ int GRUMPI_Comm_create_intranode(MPI_Comm comm, MPI_Comm *newcomm) {
         assert(err == 0);
 
         MPI_Comm_size(comm, &size);
-        MPI_Comm_size(comm, &rank);
+        MPI_Comm_rank(comm, &rank);
 
         if (rank == 0) {
             recv_buf = (char*)malloc(HOST_NAME_MAX_LEN * size);
