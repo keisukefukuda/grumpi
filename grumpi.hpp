@@ -64,7 +64,7 @@ namespace grumpi {
     _GRUMPI_DEFINE_MPI_DATATYPE(float,  MPI_FLOAT);
     _GRUMPI_DEFINE_MPI_DATATYPE(double, MPI_DOUBLE);
     _GRUMPI_DEFINE_MPI_DATATYPE(long double, MPI_LONG_DOUBLE);
-    
+
     inline int Comm_create_intranode(MPI_Comm comm, MPI_Comm *newcomm) {
         const char *envvar = nullptr;
 
@@ -78,7 +78,7 @@ namespace grumpi {
         } else {
             char my_host[HOST_NAME_MAX_LEN];
             int err = gethostname(my_host, HOST_NAME_MAX_LEN);
-            assert(err == 0);
+            assert(err == 0); (void) err;
 
             std::vector<char> recv_buf;
 
